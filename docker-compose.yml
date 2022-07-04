@@ -9,6 +9,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    restart: always
     logging:
       driver: local
   grafana:
@@ -19,5 +20,10 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - grafana-storage:/var/lib/grafana
+    restart: always
     logging:
       driver: local
+
+volumes:
+    grafana-storage:

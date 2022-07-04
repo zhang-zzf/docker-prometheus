@@ -34,4 +34,4 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["docker.for.mac.host.internal:9100"]
+      - targets: ["10.255.2.12:9100", "10.255.2.10:9100"]
