@@ -25,5 +25,11 @@ services:
     logging:
       driver: local
 
+  redis_exporter:
+    image: oliver006/redis_exporter
+    container_name: redis_exporter
+    ports:
+      - 9121:9121
+
 volumes:
     grafana-storage:
